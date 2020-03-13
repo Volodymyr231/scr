@@ -1,24 +1,22 @@
 package pro.edu.scr.model;
 
-import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 
-public class Person {
+public class Doctor {
 
     private String id;
     private String name;
     private int age;
 
-    public Person() {
+    public Doctor() {
     }
 
-    public Person(String name, int age) {
+    public Doctor(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public Person(String id, String name, int age) {
+    public Doctor(String id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -52,10 +50,10 @@ public class Person {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return age == person.age &&
-                id.equals(person.id) &&
-                Objects.equals(name, person.name);
+        Doctor doctor = (Doctor) o;
+        return age == doctor.age &&
+                id.equals(doctor.id) &&
+                name.equals(doctor.name);
     }
 
     @Override
@@ -65,11 +63,10 @@ public class Person {
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this)
-                .omitNullValues()
-                .add("id", this.id)
-                .add("name",this.name)
-                .add("age",this.age)
-                .toString();
+        return "Doctor{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
